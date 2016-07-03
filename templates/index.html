@@ -14,14 +14,14 @@
   <h1>Caesar Cipher</h1>
     <p>How it works:</p>
     <pre>
-  Input plain text
+  Input plaintext
   Cipher is applied:
     will shift every character by
     some value (this is called the <mark>key</mark>)
       if key=1 then A becomes B
       if key=2 then A becomes C
       if key=3 then A becomes D and so on
-  Output cipher text
+  Output ciphertext
     </pre>
 
   <div class="row">
@@ -29,20 +29,18 @@
     <div class="col-sm-6">
       <form role="form">
         <div class="form-group">
-          <label for="plaintext">Input Plaintext:</label>
+          <label for="plaintext" action="{{ url_for('index') }}" name="plaintext" method="POST">Input Plaintext:</label>
           <textarea class="form-control" rows="5" id="plaintext"></textarea>
         </div>
+        <label for="keyE">Select a KeyValue:</label>
+          <select class="form-control" id="keyE">
+            <option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option>
+          </select>
       </form>
-      <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">KeyValue
-        <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu">
-        <li><a href="#">HTML</a></li>
-        <li><a href="#">CSS</a></li>
-        <li><a href="#">JavaScript</a></li>
-      </ul>
+
       <button type="button" class="btn btn-success">Encrypt</button>
     </div>
+
     <div class="col-sm-6">
       <form role="form">
         <div class="form-group">
@@ -60,6 +58,7 @@
       </ul>
         <button type="button" class="btn btn-danger">Decrypt</button>
     </div>
+  <!--  <label>Output Ciphertext:</label> -->
 
   </div>
 

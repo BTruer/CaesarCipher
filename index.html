@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Caesar Cipher</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container-fluid">
+  <h1>Caesar Cipher</h1>
+    <p>How it works:</p>
+    <pre>
+  Input plain text
+  Cipher is applied:
+    will shift every character by
+    some value (this is called the <mark>key</mark>)
+      if key=1 then A becomes B
+      if key=2 then A becomes C
+      if key=3 then A becomes D and so on
+  Output cipher text
+    </pre>
+
+  <div class="row">
+
+    <div class="col-sm-6">
+      <form role="form">
+        <div class="form-group">
+          <label for="plaintext">Input Plaintext:</label>
+          <textarea class="form-control" rows="5" id="plaintext"></textarea>
+        </div>
+      </form>
+      <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">KeyValue
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a href="#">HTML</a></li>
+        <li><a href="#">CSS</a></li>
+        <li><a href="#">JavaScript</a></li>
+      </ul>
+      <button type="button" class="btn btn-success">Encrypt</button>
+    </div>
+    <div class="col-sm-6">
+      <form role="form">
+        <div class="form-group">
+          <label for="comment">Input Ciphertext:</label>
+          <textarea class="form-control" rows="5" id="ciphertext"></textarea>
+        </div>
+      </form>
+      <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">KeyValue
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a href="#">HTML</a></li>
+        <li><a href="#">CSS</a></li>
+        <li><a href="#">JavaScript</a></li>
+      </ul>
+        <button type="button" class="btn btn-danger">Decrypt</button>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>

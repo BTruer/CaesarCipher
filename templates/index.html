@@ -15,8 +15,8 @@
     <p>How it works:</p>
     <pre>
   Input plaintext
-  Cipher is applied:
-    will shift every character by
+  Ciphertext = encrypt(plaintext):
+    text will shift every character by
     some value (this is called the <mark>key</mark>)
       if key=1 then A becomes B
       if key=2 then A becomes C
@@ -38,9 +38,10 @@
           <br>
           <button type="submit" name="submitButton" value="encryptMe" class="btn btn-success">Encrypt</button>
       </form>
-      {% if PostTrue == True %}
+      {% if textE != "" %}
         <br>
-        <p class="textE">{{ textE }}</p>
+        <label>Output Ciphertext:</label>
+        <pre>{{ textE }}</pre>
         <br>
       {% endif %}
     </div>
@@ -57,9 +58,10 @@
           <br>
           <button type="submit" name="submitButton" value="decryptMe" class="btn btn-danger">Decrypt</button>
       </form>
-      {% if PostTrue == True %}
+      {% if textD != "" %}
         <br>
-        <p class="textD">{{ textD }}</p>
+        <label>Output Plaintext:</label>
+        <pre>{{ textD }}</pre>
         <br>
       {% endif %}
 

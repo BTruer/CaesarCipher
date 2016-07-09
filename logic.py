@@ -41,3 +41,14 @@ def getPlaintext(keyD,ciphertext):
         else:
             plaintext = plaintext + char
     return plaintext
+
+def getPlaintextAll(ciphertext):
+    plaintextAll = ""
+    for keyD in range(1,26):
+        if len(str(keyD)) == 1:
+            plaintextAll = plaintextAll + "Key Value = -" + str(keyD) + "        "
+        else:
+            plaintextAll = plaintextAll + "Key Value = -" + str(keyD) + "       "
+        plaintext = getPlaintext(keyD,ciphertext)
+        plaintextAll = plaintextAll + plaintext + "\n"
+    return plaintextAll

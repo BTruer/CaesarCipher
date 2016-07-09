@@ -1,4 +1,8 @@
+from random import randint
+
 def getCiphertext(keyE,plaintext):
+    if int(keyE) == 0:
+        keyE = getRandKey()
     ciphertext=""
     for char in plaintext:
         if char.isalpha():
@@ -21,6 +25,8 @@ def getCiphertext(keyE,plaintext):
     return ciphertext
 
 def getPlaintext(keyD,ciphertext):
+    if int(keyD) == 0:
+        keyD = getRandKey()
     plaintext = ""
     for char in ciphertext:
         if char.isalpha():
@@ -52,3 +58,6 @@ def getPlaintextAll(ciphertext):
         plaintext = getPlaintext(keyD,ciphertext)
         plaintextAll = plaintextAll + plaintext + "\n"
     return plaintextAll
+
+def getRandKey():
+    return randint(1,25)

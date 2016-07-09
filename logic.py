@@ -1,4 +1,5 @@
 from random import randint
+from langdetect import detect, detect_langs
 
 def getCiphertext(keyE,plaintext):
     if int(keyE) == 0:
@@ -52,11 +53,14 @@ def getPlaintextAll(ciphertext):
     plaintextAll = ""
     for keyD in range(1,26):
         if len(str(keyD)) == 1:
-            plaintextAll = plaintextAll + "Key Value = -" + str(keyD) + "        "
+            plaintextAll = plaintextAll + "Key Value = " + str(keyD) + " :"
         else:
-            plaintextAll = plaintextAll + "Key Value = -" + str(keyD) + "       "
+            plaintextAll = plaintextAll + "Key Value = " + str(keyD) + ":"
         plaintext = getPlaintext(keyD,ciphertext)
-        plaintextAll = plaintextAll + plaintext + "\n"
+        if str(detect(plaintext)) == "en":
+            plaintextAll = plaintextAll + "***Eng detected*** " +plaintext + "\n"
+        else:
+            plaintextAll = plaintextAll + "                   " +plaintext + "\n"
     return plaintextAll
 
 def getRandKey():
